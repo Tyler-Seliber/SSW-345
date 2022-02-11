@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="topcoder">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/topcoder.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/Downloads/topcoder.jar!/" />
+    </SOURCES>
+  </library>
+</component>
