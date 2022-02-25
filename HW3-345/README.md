@@ -11,8 +11,7 @@ Listing branches can be achieved using the `repos/{owner}/{repo}/branches` endpo
 console.log(`Branches in ${owner}/${repo}:`);
 var obj = JSON.parse(body);
 // Log each branch in the repository to the console.
-for(var i = 0; i < obj.length; i++)
-{
+for (var i = 0; i < obj.length; i++) {
 	var name = obj[i].name;
 	console.log(name);
 }
@@ -29,7 +28,7 @@ A new public GitHub repository can be made using the `/users/repos` endpoint and
 
 ```javascript
 options.json = 
-    {
+	{
 		"name": repo,
 		"has_wiki": false
 	};
@@ -81,9 +80,9 @@ This can also be achieved using the command
 ```
 curl \
 	-X POST \
- 	-H "Accept: application/vnd.github.v3+json" \ 
-    -H "Authorization: token $GITHUBTOKEN" \
- 	https://api.github.com/repos/Tyler-Seliber/Created-From-REST/issues \
+	-H "Accept: application/vnd.github.v3+json" \ 
+	-H "Authorization: token $GITHUBTOKEN" \
+	https://api.github.com/repos/Tyler-Seliber/Created-From-REST/issues \
  	-d '{"title":"{issueName}","body":"{issueBody}"}'
 ```
 
