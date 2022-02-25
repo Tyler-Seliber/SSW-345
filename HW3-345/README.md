@@ -56,6 +56,8 @@ curl \
     -d '{"name":"{name}"}'
 ```
 
+The newly created repository is located at [Tyler-Seliber/Created-From-REST](https://github.com/Tyler-Seliber/Created-From-REST).
+
 ## Homework Activities
 
 ### Task 3: Create an issue.
@@ -85,6 +87,8 @@ curl \
 	https://api.github.com/repos/Tyler-Seliber/Created-From-REST/issues \
  	-d '{"title":"{issueName}","body":"{issueBody}"}'
 ```
+
+The newly created issues can be viewed at [Tyler-Seliber/Created-From-REST](https://github.com/Tyler-Seliber/Created-From-REST/issues).
 
 ### Task 4: Enable wiki support.
 
@@ -116,4 +120,4 @@ curl \
 ```
 
 ### Task 5: REST Server
-The video demonstration for the REST Server exercise is available in the [`REST Server Exercise.mov`](https://github.com/Tyler-Seliber/SSW-345/blob/HW3/HW3-345/REST%20Server%20Exercise.mov) file.
+The video demonstration for the REST Server exercise is available in the [`REST Server Exercise.mov`](https://github.com/Tyler-Seliber/SSW-345/blob/main/HW3-345/REST%20Server%20Exercise.mov) file.
