@@ -113,6 +113,7 @@ async function listBranches(owner,repo)
 			
 			console.log(`Branches in ${owner}/${repo}:`);
 			var obj = JSON.parse(body);
+			// Log each branch in the repository to the console.
 			for( var i = 0; i < obj.length; i++ )
 			{
 				var name = obj[i].name;
