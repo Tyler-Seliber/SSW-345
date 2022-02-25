@@ -146,7 +146,11 @@ async function createRepo(owner,repo)
 				return; // Terminate execution.
 			}
 
-			console.log(`New repository successfully created at https://github.com/${owner}/${repo}`);
+			if ( response.statusCode == 404) {
+				console.log(chalk.red(`Repository ${owner}/${repo} already exists.`));
+			} else {
+				console.log(`New repository successfully created at https://github.com/${owner}/${repo}`);
+			}
 			resolve( response.statusCode );
 
 		});
@@ -203,7 +207,7 @@ async function enableWikiSupport(owner,repo)
 			}
 
 			console.log(`Wiki support has been enabled for ${owner}/${repo}`);
-			resolve( JSON.parse(body) );
+			resolve(body);
 		});
 	});	
 }
