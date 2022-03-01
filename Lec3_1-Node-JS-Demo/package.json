@@ -1,0 +1,14 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "this is a demo app",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "Tyler",
+  "license": "ISC",
+  "dependencies": {
+    "grunt": "^1.4.1"
+  }
+}
