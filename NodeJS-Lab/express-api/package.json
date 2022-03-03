@@ -4,7 +4,8 @@
   "description": "Node.js and Express REST API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \\ Error: no test specified"
+    "test": "echo \\ Error: no test specified",
+    "start": "node app.js"
   },
   "keywords": [
     "first",
