@@ -1,6 +1,7 @@
 // Require packages and set the port
 const express = require('express');
 const bodyParser = require('body-parser');
+const routes = require('./routes');
 const port = 3002;
 const app = express();
 
@@ -11,10 +12,7 @@ app.use(bodyParser.urlencoded({
  }));
 
 // Llooking for GET request at root of server (/)
-app.get('/', (request, response) => {
-    response.send({ 
-        message: 'Node.js and Express REST API'});
-});
+routes(app);
 
 // Start the server
 const server = app.listen(port, (error) => {
