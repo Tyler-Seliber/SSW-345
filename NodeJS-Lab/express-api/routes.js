@@ -31,6 +31,17 @@ const router = app => {
         });
     });
     });
+        // Display a single developer by ID
+        app.get('/handles/:handle', (request, response) => {
+            const handle = request.params.handle;
+            pool.query('SELECT * FROM Handle WHERE handle=?', handle, (error, result) => {
+                if (error) throw error;
+             
+                response.send(result);
+            }); 
+    
+        });
+    
 };
 
 // Export the router
