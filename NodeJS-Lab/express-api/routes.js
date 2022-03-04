@@ -19,29 +19,39 @@ const router = app => {
         response.send({ 
             message: 'Node.js and Express REST API'
         });
+
         app.get('/users', (request, response) => {
             response.send(users);
         });
+
         // Display all workers query from remote DB
         app.get('/handles', (request, response) => {
-        pool.query('SELECT * FROM Handle', (error, result) => {
-            if (error) throw error;
-    
-            response.send(result);
-        });
-    });
-    });
-        // Display a single developer by ID
-        app.get('/handles/:handle', (request, response) => {
-            const handle = request.params.handle;
-            pool.query('SELECT * FROM Handle WHERE handle=?', handle, (error, result) => {
+            pool.query('SELECT * FROM Handle', (error, result) => {
                 if (error) throw error;
-             
+        
                 response.send(result);
-            }); 
-    
+            });
         });
+    });
+
+    // Display a single developer by ID
+    app.get('/handles/:handle', (request, response) => {
+        const handle = request.params.handle;
+        pool.query('SELECT * FROM Handle WHERE handle=?', handle, (error, result) => {
+            if (error) throw error;
+            
+            response.send(result);
+        }); 
+    });
     
+    // Add a new developer
+    app.post('/handles', (request, response) => {
+        pool.query('INSERT INTO Handle SET ?', request.body, (error, result) => {
+            if (error) throw error;
+
+            response.status(201).send(`Developer added`);
+        });
+    });
 };
 
 // Export the router
