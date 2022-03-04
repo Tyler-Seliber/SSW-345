@@ -1,3 +1,6 @@
+// Load the MySQL pool
+const pool = require('./data/config');
+
 const users = [
     {
         id: 1,
@@ -19,6 +22,14 @@ const router = app => {
         app.get('/users', (request, response) => {
             response.send(users);
         });
+        // Display all workers query from remote DB
+        app.get('/handles', (request, response) => {
+        pool.query('SELECT * FROM Handle', (error, result) => {
+            if (error) throw error;
+    
+            response.send(result);
+        });
+    });
     });
 };
 
